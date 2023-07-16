@@ -5,7 +5,7 @@ import { FriendAva, FriendItem, FriendName, FriendStatus } from "../FriendListIt
 export const FriendsListItem = ({status, avatar, name}) => {
     return (
         <FriendItem>
-            <FriendStatus>{status}</FriendStatus>
+            <FriendStatus isOnline={ status}>{status}</FriendStatus>
             <FriendAva src={avatar} alt="User avatar" width="48" />
             <FriendName>{name}</FriendName>
         </FriendItem>
@@ -13,7 +13,7 @@ export const FriendsListItem = ({status, avatar, name}) => {
 }
 
 FriendsListItem.propTypes = {
-    status: PropTypes.bool,
-    avatar: PropTypes.string,
-    name: PropTypes.string
+    status: PropTypes.bool.isRequired,
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
 }
